@@ -28,8 +28,8 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema.output_parser import StrOutputParser
 import os
 
-open_api_key = "sk-None-v68Xc4vqG5Ll4BDEKKqdT3BlbkFJnAQWuIuNVpwujNjAPw2v"
-!export OPEN_API_KEY='sk-None-v68Xc4vqG5Ll4BDEKKqdT3BlbkFJnAQWuIuNVpwujNjAPw2v'
+open_api_key = ""
+!export OPEN_API_KEY=''
 
 os.environ["NEO4J_URI"] = "neo4j+s://fd919b29.databases.neo4j.io"
 os.environ["NEO4J_USERNAME"] = "neo4j"
@@ -88,7 +88,7 @@ from typing import Tuple,List,Optional
 from langchain_community.vectorstores import Neo4jVector
 from langchain_openai import OpenAIEmbeddings
 
-openai_api_key = 'sk-None-v68Xc4vqG5Ll4BDEKKqdT3BlbkFJnAQWuIuNVpwujNjAPw2v'
+openai_api_key = ''
 
 embedding = OpenAIEmbeddings(openai_api_key=openai_api_key)
 
@@ -213,7 +213,7 @@ _search_query=RunnableBranch(
 
         )
         |CONDENSE_QUESTION_PROMPT
-        |ChatOpenAI(temperature=0,openai_api_key = 'sk-None-v68Xc4vqG5Ll4BDEKKqdT3BlbkFJnAQWuIuNVpwujNjAPw2v')
+        |ChatOpenAI(temperature=0,openai_api_key = '')
         | StrOutputParser(),
     ),
     RunnableLambda(lambda x:x["question"]),
